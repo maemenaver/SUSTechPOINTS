@@ -2004,6 +2004,8 @@ function Editor(editorUi, wrapperUi, editorCfg, data, name="editor"){
 
         this.operation_state.key_pressed = true;
 
+        this.viewManager.mainView.orbit_perspective.enableKeyPan = !this.selected_box
+
         switch ( ev.key) {
             case '+':
             case '=':

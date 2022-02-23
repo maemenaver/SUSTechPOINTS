@@ -74,7 +74,9 @@ class OrbitControls extends EventDispatcher {
 		this.enablePan = true;
 		this.panSpeed = 1.0;
 		this.screenSpacePanning = true; // if false, pan orthogonal to world-space direction camera.up
-		this.keyPanSpeed = 35.0;	// pixels moved per arrow key push
+
+		this.enableKeyPan = true;
+		this.keyPanSpeed = 28.0;	// pixels moved per arrow key push
 
 		// Set to true to automatically rotate around the target
 		// If auto-rotate is enabled, you must call controls.update() in your animation loop
@@ -82,7 +84,7 @@ class OrbitControls extends EventDispatcher {
 		this.autoRotateSpeed = 2.0; // 30 seconds per orbit when fps is 60
 
 		// The four arrow keys
-		this.keys = { LEFT: 'ArrowLeft', UP: 'ArrowUp', RIGHT: 'ArrowRight', BOTTOM: 'ArrowDown' };
+		this.keys = { LEFT: 'KeyA', UP: 'KeyW', RIGHT: 'KeyD', BOTTOM: 'KeyS' };
 		this.keysPressed = {
 			LEFT: false,
 			UP: false,
@@ -275,7 +277,7 @@ class OrbitControls extends EventDispatcher {
 
 				scale = 1;
 
-				if ( scope.enabled === true && scope.enablePan === true ) {
+				if ( scope.enabled === true && scope.enablePan === true && scope.enableKeyPan === true ) {
 					scope.screenSpacePanning = false;
 					handleKeyDown();
 					scope.screenSpacePanning = true;
