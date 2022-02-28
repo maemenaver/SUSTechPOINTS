@@ -893,8 +893,8 @@ function Editor(editorUi, wrapperUi, editorCfg, data, name="editor"){
 
     this.animate= function() {
         let self=this;
-        requestAnimationFrame( function(){self.animate();} );
         this.viewManager.mainView.orbit_perspective.update();
+        requestAnimationFrame( function(){self.animate();} );
     };
 
 

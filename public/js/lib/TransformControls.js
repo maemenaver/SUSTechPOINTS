@@ -545,9 +545,9 @@ class TransformControls extends Object3D {
 
 	// Set current object
 	attach( object ) {
-
-		this.object = object;
-		this.visible = true;
+		this.detach()
+		// this.object = object;
+		// this.visible = true;
 
 		return this;
 
