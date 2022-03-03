@@ -1716,6 +1716,8 @@ function Editor(editorUi, wrapperUi, editorCfg, data, name="editor"){
                 }
             }
 
+            this.viewManager.mainView.orbit_perspective.target.copy(object.position)
+
             // highlight box
             // shold change this id if the current selected box changed id.
             this.view_state.lock_obj_track_id = object.obj_track_id;
