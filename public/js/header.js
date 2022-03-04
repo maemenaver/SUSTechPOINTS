@@ -149,6 +149,16 @@ var Header=function(ui, data, cfg, onSceneChanged, onFrameChanged, onObjectSelec
 
     this.ui.querySelector("#save-button").onclick = ()=>{
         saveWorldList(this.data.worldList);
+        setTimeout(() => {
+            this.data.world.annotation.load_annotation(ann => {
+                let fileToSave = new Blob([JSON.stringify(ann)], {
+                    type: "application/json"
+                })
+                console.log(saveAs)
+                saveAs(fileToSave, "asd.json")
+            })
+
+        }, 1000);
     }
 };
 
