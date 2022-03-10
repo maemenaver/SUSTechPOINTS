@@ -62,7 +62,7 @@ function Mouse(view, op_state, mainui_container, parentUi, on_left_click, on_rig
     this.getMousePosition = function( dom, offsetX, offsetY ) {
 
         
-        return [offsetX/dom.clientWidth * 2 - 1,  - offsetY/dom.clientHeight * 2 + 1];
+        return [(offsetX+320)/(dom.clientWidth-640) * 2 - 2,  - offsetY/dom.clientHeight * 2 + 1];
 
     };
 
@@ -111,7 +111,7 @@ function Mouse(view, op_state, mainui_container, parentUi, on_left_click, on_rig
     this.onMouseMove=function( event ) {
         event.preventDefault();
 
-        //console.log(this.getMousePosition(this.domElement, event.offsetX, event.offsetY));
+        console.log("onMouseMove > getMousePosition",this.getMousePosition(this.domElement, event.offsetX, event.offsetY));
 
         if (in_select_mode){
 
