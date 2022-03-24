@@ -1716,7 +1716,13 @@ function Editor(editorUi, wrapperUi, editorCfg, data, name="editor"){
                 }
             }
 
-            this.viewManager.mainView.orbit_perspective.target.copy(object.position)
+            let {x, y, z} = {...object.position}
+            x += this.mainViewOffset[0]
+            y += this.mainViewOffset[1]
+            z += this.mainViewOffset[2]
+            this.viewManager.mainView.orbit_perspective.target.set(x, y, z)
+
+            console.log("Target", this.viewManager.mainView.orbit_perspective.target)
 
             // highlight box
             // shold change this id if the current selected box changed id.
@@ -2310,7 +2316,7 @@ function Editor(editorUi, wrapperUi, editorCfg, data, name="editor"){
             ];
         
         this.mainViewOffset = world.coordinatesOffset;
-        
+
         this.viewManager.mainView.orbit.target.x += newOffset[0];
         this.viewManager.mainView.orbit.target.y += newOffset[1];
         this.viewManager.mainView.orbit.target.z += newOffset[2];
