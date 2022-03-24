@@ -20,6 +20,7 @@ class LogWindow extends PopupDialog{
 
         this.clearBtn.onclick = ()=>{ this.contentUi.innerHTML = ""; };
         this.log("Welcome!");
+        this.hide();
     }
 
     setUi(ui)
