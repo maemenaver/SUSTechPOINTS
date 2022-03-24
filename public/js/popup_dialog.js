@@ -8,12 +8,12 @@ class MovableView
     // move starts in dragableUi, 
     // movable in movableUi,
     // the pos of posUi is set.
-    constructor(dragableUi, posUi, funcOnMove)
+    constructor(dragableUi, posUi, funcOnMove, disable)
     {
-
         let movableUi = document.getElementById("move-handle-wrapper");
 
         dragableUi.addEventListener("mousedown", (event)=>{
+            if (disable) return
             if (event.which == 1 && event.currentTarget == event.target)
             {
                 
@@ -25,6 +25,7 @@ class MovableView
         });
 
         movableUi.addEventListener("mouseup", (event)=>{
+            if (disable) return
             if (this.mouseDown){
                 dragableUi.style.cursor = "";
                 event.stopPropagation();
@@ -36,7 +37,7 @@ class MovableView
         });
 
         movableUi.addEventListener("mousemove", (event)=>{
-
+            if (disable) return
             if (this.mouseDown){
                 let posDelta = {
                     x: event.clientX - this.mouseDownPos.x,

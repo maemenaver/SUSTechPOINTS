@@ -209,7 +209,7 @@ class ImageContext extends MovableView{
         parentUi.appendChild(tool);
         let ui = parentUi.lastElementChild;
         let handle = ui.querySelector("#move-handle");
-        super(handle, ui);
+        super(handle, ui, null, true);
 
         this.ui = ui;
         this.cfg = cfg;
@@ -853,7 +853,9 @@ class ImageContextManager {
         this.on_img_click = on_img_click;
 
         this.addImage("", true);
-
+        this.addImage("right", false);
+        this.addImage("left", false);
+        this.addImage("front", false);
 
         this.selectorUi.onmouseenter=function(event){
             if (this.timerId)
@@ -913,6 +915,7 @@ class ImageContextManager {
     }
 
     updateCameraList(cameras){
+        console.log("upadteCameraList", cameras)
 
         let autoCamera = '<div class="camera-item" id="camera-item-auto">auto</div>';
 

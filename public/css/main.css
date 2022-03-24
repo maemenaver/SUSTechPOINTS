@@ -309,6 +309,18 @@ dynamic set obj-type css has higher priority than this one.
 
 }
 
+.image-wrapper:nth-last-child(1) {
+	top: 25%;
+}
+
+.image-wrapper:nth-last-child(2) {
+	top: 50%;
+}
+
+.image-wrapper:nth-last-child(3) {
+	top: 75%;
+}
+
 .image-wrapper {
 	position: absolute;
 	resize:both;
