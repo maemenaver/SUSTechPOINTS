@@ -156,7 +156,7 @@ function ViewManager(mainViewContainer, webglScene, webglMainScene, renderer, gl
             
             //console.log(left,bottom, width, height);
 
-            this.renderer.setViewport( left+320, bottom, width - 640, height );
+            this.renderer.setViewport( left, bottom, width, height );
             this.renderer.setScissor( left+320, bottom, width - 640, height );
             this.renderer.setClearColor(view.backgroundColor );
             this.renderer.setScissorTest( true );
